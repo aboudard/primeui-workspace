@@ -1,0 +1,18 @@
+<div class="flex min-h-screen flex-col items-center justify-center gap-4 text-center">
+  <div>
+    <h1>{{ title() }}</h1>
+  </div>
+  <div class="flex gap-4">
+    <button pButton>Check</button>
+    <button pButton class="p-button-accent">Button accent</button>
+  </div>
+  <div class="flex flex-wrap justify-center gap-4">
+    @for (category of categories; track category.key) {
+    <div class="flex items-center gap-2">
+      <p-radiobutton [inputId]="category.key" name="category" [value]="category.key" [(ngModel)]="selectedCategory" />
+      <label pLabel [for]="category.key" class="text-sm">{{ category.name }}</label>
+    </div>
+    }
+  </div>
+  <router-outlet />
+</div>
