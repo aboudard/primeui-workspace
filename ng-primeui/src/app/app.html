@@ -3,8 +3,8 @@
     <h1>{{ title() }}</h1>
   </div>
   <div class="flex gap-4">
-    <button pButton>Check</button>
-    <button pButton class="p-button-accent">Button accent</button>
+    <button pButton><svg data-p-icon="check"></svg> Check</button>
+    <button pButton class="p-button-accent"><svg data-p-icon="user"></svg> Button accent</button>
   </div>
   <div class="flex flex-wrap justify-center gap-4">
     @for (category of categories; track category.key) {

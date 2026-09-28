@@ -4,9 +4,11 @@ import { RouterOutlet } from '@angular/router';
 import { ButtonDirective } from 'primeng/button';
 import { Label } from 'primeng/label';
 import { RadioButton } from 'primeng/radiobutton';
+import { User } from '@primeicons/angular/user';
+import { Check } from '@primeicons/angular/check';
 
 @Component({
-  imports: [RouterOutlet, ButtonDirective, RadioButton, Label, FormsModule],
+  imports: [RouterOutlet, ButtonDirective, RadioButton, Label, FormsModule, User, Check],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
