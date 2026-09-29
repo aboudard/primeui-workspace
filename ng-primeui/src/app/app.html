@@ -1,9 +1,11 @@
 <div class="flex min-h-screen flex-col items-center justify-center gap-4 text-center">
   <div>
     <h1>{{ title() }}</h1>
+    <p>{{ user.name }}</p>
   </div>
   <div class="flex gap-4">
     <button pButton><svg data-p-icon="check"></svg> Check</button>
+    <input pInputText />
     <button pButton class="p-button-accent"><svg data-p-icon="user"></svg> Button accent</button>
   </div>
   <div class="flex flex-wrap justify-center gap-4">

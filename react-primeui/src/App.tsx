@@ -4,11 +4,14 @@ import { Check, User } from "@primeicons/react";
 import "./App.css";
 import { RadioButtonGroup, type RadioButtonGroupValueChangeEvent } from "@primereact/ui/radiobuttongroup";
 import { RadioButton } from "@primereact/ui/radiobutton";
+import { InputText } from '@primereact/ui/inputtext';
 import { Label } from "@primereact/ui/label";
+import { type User as PrimeUser, DEFAULT_USER } from 'lib-primeui';
 
 function App() {
   const [title, setTitle] = useState("react-primeui");
   const [ingredient, setIngredient] = useState<string | undefined>();
+  const user: PrimeUser = DEFAULT_USER;
     const categories = [
         { name: 'Accounting', key: 'A' },
         { name: 'Marketing', key: 'M' },
@@ -21,11 +24,13 @@ function App() {
       <div className="flex min-h-screen flex-col items-center justify-center gap-4 text-center">
         <div>
           <h1>{title}</h1>
+          <p>{user.name}</p>
         </div>
         <div className="flex gap-4">
           <Button>
             <Check /> Check
           </Button>
+          <InputText />
           <Button className="p-button-accent">
             <User /> Button accent
           </Button>

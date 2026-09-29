@@ -4,17 +4,20 @@ import { RouterOutlet } from '@angular/router';
 import { ButtonDirective } from 'primeng/button';
 import { Label } from 'primeng/label';
 import { RadioButton } from 'primeng/radiobutton';
+import { InputText } from 'primeng/inputtext';
 import { User } from '@primeicons/angular/user';
 import { Check } from '@primeicons/angular/check';
+import { User as PrimeUser, DEFAULT_USER } from 'lib-primeui';
 
 @Component({
-  imports: [RouterOutlet, ButtonDirective, RadioButton, Label, FormsModule, User, Check],
+  imports: [RouterOutlet, ButtonDirective, InputText, RadioButton, Label, FormsModule, User, Check],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
 })
 export class App {
   protected readonly title = signal('ng-primeui');
+  protected user: PrimeUser = DEFAULT_USER;
 
   selectedCategory: string | undefined;
   categories = [

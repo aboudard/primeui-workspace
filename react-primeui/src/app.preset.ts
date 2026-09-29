@@ -31,5 +31,10 @@ export const AppPreset = definePreset(Aura, {
   },
   components: {
     button: AppButton,
+    inputtext: {
+      root: {
+        background: 'var(--p-primary-50)',
+      }
+    }
   },
 });
