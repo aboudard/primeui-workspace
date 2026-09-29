@@ -5,13 +5,20 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "release": "release-it"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
+  "peerDependencies": {
+    "@primeuix/themes": "^3.0.0"
+  },
   "devDependencies": {
+    "@primeuix/themes": "^3.0.0",
+    "@release-it/conventional-changelog": "^12.0.2",
+    "release-it": "^21.1.0",
     "tsup": "^8.5.1",
     "typescript": "^7.0.2"
   },
