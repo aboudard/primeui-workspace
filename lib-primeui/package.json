@@ -1,17 +1,21 @@
 {
   "name": "lib-primeui",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A small TypeScript library providing a User type and default user value.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc",
+    "prepublishOnly": "npm run build",
     "release": "release-it"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "@primeuix/themes": "^3.0.0"
   },

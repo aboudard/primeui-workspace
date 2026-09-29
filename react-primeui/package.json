@@ -14,7 +14,7 @@
     "@primereact/ui": "^11.1.0",
     "@primeuix/themes": "^3.0.1",
     "@tailwindcss/vite": "^4.3.3",
-    "lib-primeui": "^1.0.1",
+    "lib-primeui": "^1.1.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "tailwindcss": "^4.3.3"
