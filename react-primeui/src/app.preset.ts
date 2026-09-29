@@ -1,19 +1,8 @@
 import { definePreset } from "@primeuix/themes";
 import Aura from "@primeuix/themes/aura";
-import { AppButton } from "./app.button";
+import { PrimeUIPreset } from "lib-primeui";
 
-export const AppPreset = definePreset(Aura, {
-  //Your customizations, see the following sections for examples
-  primitive: {
-    borderRadius: {
-      none: "0",
-      xs: "1px",
-      sm: "2px",
-      md: "3px",
-      lg: "4px",
-      xl: "5px",
-    },
-  },
+export const AppPreset = definePreset(Aura, PrimeUIPreset, {
   semantic: {
     primary: {
       50: "#e6f4f8",
@@ -30,11 +19,15 @@ export const AppPreset = definePreset(Aura, {
     },
   },
   components: {
-    button: AppButton,
-    inputtext: {
-      root: {
-        background: 'var(--p-primary-50)',
-      }
-    }
+    button: {
+      extend: {
+        accent: {
+          color:
+            "linear-gradient(90deg, {primary.color} 0%, #6088ff 50%, #9035ff 100%)",
+          hoverColor:
+            "linear-gradient(90deg, {primary.hover.color} 0%, #5276e8 50%, #7b2edb 100%)",
+        },
+      },
+    },
   },
 });
