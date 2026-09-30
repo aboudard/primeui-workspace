@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.2](https://github.com/aboudard/primeui-workspace/compare/v1.1.0...v1.1.2) (2026-09-30)
+
+### Bug Fixes
+
+* add missing newline at end of package.json ([50dd914](https://github.com/aboudard/primeui-workspace/commit/50dd914a5a0dc6571ddf69d4918ca62b2c5d2ef5))
+
 ## 1.1.0 (2026-09-29)
 
 ### Features
