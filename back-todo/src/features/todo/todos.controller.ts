@@ -8,8 +8,10 @@ import {
   Patch,
   Post,
 } from '@nestjs/common';
+import { CreateTodoDto } from './create-todo.dto';
 import { Todo } from './todo.entity';
 import { TodosService } from './todos.service';
+import { UpdateTodoDto } from './update-todo.dto';
 
 @Controller('todos')
 export class TodosController {
@@ -21,14 +23,14 @@ export class TodosController {
   }
 
   @Post()
-  create(@Body() body: { title: string; content?: string }): Promise<Todo> {
+  create(@Body() body: CreateTodoDto): Promise<Todo> {
     return this.todosService.create(body);
   }
 
   @Patch(':id')
   update(
     @Param('id', ParseIntPipe) id: number, // Convertit automatiquement la chaîne en nombre
-    @Body() body: Partial<Todo>,
+    @Body() body: UpdateTodoDto,
   ): Promise<Todo> {
     return this.todosService.update(id, body);
   }
