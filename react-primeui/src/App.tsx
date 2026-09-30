@@ -1,6 +1,7 @@
 import { Button } from "@primereact/ui/button";
 import { useState } from "react";
-import { Check, User } from "@primeicons/react";
+import { Check } from "@primeicons/react/check";
+import { User } from "@primeicons/react/user";
 import "./App.css";
 import { RadioButtonGroup, type RadioButtonGroupValueChangeEvent } from "@primereact/ui/radiobuttongroup";
 import { RadioButton } from "@primereact/ui/radiobutton";

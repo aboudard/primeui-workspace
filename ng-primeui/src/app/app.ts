@@ -16,7 +16,7 @@ import { User as PrimeUser, DEFAULT_USER } from 'lib-primeui';
   templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('ng-primeui');
+  protected readonly title = signal('angular primeui');
   protected user: PrimeUser = DEFAULT_USER;
 
   selectedCategory: string | undefined;
