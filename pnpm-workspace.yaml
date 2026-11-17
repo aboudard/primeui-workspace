@@ -1,6 +1,7 @@
 packages:
   - lib-primeui
   - ng-primeui
+  - react-primeui
   - vue-primeui
 
 allowBuilds:

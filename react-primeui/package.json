@@ -12,10 +12,11 @@
   },
   "dependencies": {
     "@primeicons/react": "^8.0.2",
+    "@primereact/core": "^11.1.0",
     "@primereact/ui": "^11.1.0",
     "@primeuix/themes": "^3.0.1",
     "@tailwindcss/vite": "^4.3.3",
-    "@abo/lib-primeui": "^1.1.0",
+    "@abo/lib-primeui": "workspace:*",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "tailwindcss": "^4.3.3"
