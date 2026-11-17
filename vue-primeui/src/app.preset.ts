@@ -1,6 +1,6 @@
 import { definePreset } from '@primeuix/themes'
 import Aura from '@primeuix/themes/aura'
-import { PrimeUIPreset } from 'lib-primeui'
+import { PrimeUIPreset } from '@abo/lib-primeui'
 
 export const AppPreset = definePreset(Aura, PrimeUIPreset, {
   semantic: {

@@ -1,5 +1,5 @@
 {
-  "name": "lib-primeui",
+  "name": "@abo/lib-primeui",
   "version": "1.1.2",
   "description": "A small TypeScript library providing a User type and default user value.",
   "main": "./dist/index.js",

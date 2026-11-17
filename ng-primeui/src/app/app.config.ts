@@ -2,7 +2,7 @@ import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/
 import { provideRouter } from '@angular/router';
 import { definePreset } from '@primeuix/themes';
 import Aura from '@primeuix/themes/aura';
-import { PrimeUIPreset } from 'lib-primeui';
+import { PrimeUIPreset } from '@abo/lib-primeui';
 import { providePrimeNG } from 'primeng/config';
 import { routes } from './app.routes';
 

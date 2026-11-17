@@ -7,7 +7,7 @@ import { RadioButton } from 'primeng/radiobutton';
 import { InputText } from 'primeng/inputtext';
 import { User } from '@primeicons/angular/user';
 import { Check } from '@primeicons/angular/check';
-import { User as PrimeUser, DEFAULT_USER } from 'lib-primeui';
+import { User as PrimeUser, DEFAULT_USER } from '@abo/lib-primeui';
 
 @Component({
   imports: [RouterOutlet, ButtonDirective, InputText, RadioButton, Label, FormsModule, User, Check],

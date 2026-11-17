@@ -82,4 +82,14 @@ Install Playwright browsers before the first E2E run with `npx playwright instal
 
 ## Shared Library Dependency
 
-All three example apps declare `lib-primeui` as an npm dependency. The library package sets its publish registry to `http://localhost:4873/`, so publishing or installing a newly released local version requires that Verdaccio registry to be running. For library development, build it from `lib-primeui/` with `npm run build`.
+All three example apps declare `@abo/lib-primeui` as an npm dependency. The library package sets its publish registry to `http://localhost:4873/`, so publishing or installing a newly released local version requires that Verdaccio registry to be running. For library development, build it from `lib-primeui/` with `npm run build`.
+
+## Registry npm et dépendances privées
+
+La librairie partagée s'appelle désormais **`@abo/lib-primeui`** (anciennement `lib-primeui`). Ordre de mise en route :
+
+1. Démarrer Verdaccio (`http://localhost:4873/`).
+2. Publier la librairie : `cd lib-primeui && npm install && npm publish`.
+3. Dans chaque application (`ng-primeui`, `react-primeui`, `vue-primeui`) : `npm install` pour régénérer le `package-lock.json`.
+
+Chaque application a un `.npmrc` qui envoie le scope `@abo` vers Verdaccio et tout le reste vers `https://registry.npmjs.org/`.
