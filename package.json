@@ -1,5 +1,31 @@
 {
   "name": "primeui-workspace",
   "private": true,
-  "packageManager": "pnpm@11.9.0"
+  "packageManager": "pnpm@11.9.0",
+  "scripts": {
+    "build": "pnpm -r run build",
+    "build:library": "pnpm --filter @abo/lib-primeui build",
+    "build:angular": "pnpm run build:library && pnpm --filter ng-primeui build",
+    "build:react": "pnpm run build:library && pnpm --filter react-primeui build",
+    "build:vue": "pnpm run build:library && pnpm --filter vue-primeui build",
+    "build:backend": "pnpm --filter back-todo build",
+    "watch:library": "pnpm --filter @abo/lib-primeui dev",
+    "dev": "pnpm run build:library && pnpm -r --parallel --if-present run dev",
+    "dev:angular": "pnpm run build:library && pnpm --filter ng-primeui dev",
+    "dev:react": "pnpm run build:library && pnpm --filter react-primeui dev",
+    "dev:vue": "pnpm run build:library && pnpm --filter vue-primeui dev",
+    "dev:backend": "pnpm --filter back-todo start:dev",
+    "test:angular": "pnpm --filter ng-primeui exec ng test --watch=false",
+    "test:vue": "pnpm --filter vue-primeui exec vitest run",
+    "test:backend": "pnpm --filter back-todo test",
+    "lint:react": "pnpm --filter react-primeui lint",
+    "lint:vue": "pnpm --filter vue-primeui exec oxlint . && pnpm --filter vue-primeui exec eslint .",
+    "lint:backend": "pnpm --filter back-todo lint",
+    "check:library": "pnpm run build:library",
+    "check:angular": "pnpm run build:angular && pnpm run test:angular",
+    "check:react": "pnpm run build:react && pnpm run lint:react",
+    "check:vue": "pnpm run build:vue && pnpm run test:vue && pnpm run lint:vue",
+    "check:backend": "pnpm run build:backend && pnpm run test:backend && pnpm run lint:backend",
+    "check": "pnpm run check:library && pnpm run check:angular && pnpm run check:react && pnpm run check:vue && pnpm run check:backend"
+  }
 }

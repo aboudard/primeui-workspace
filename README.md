@@ -28,24 +28,25 @@ pnpm install --frozen-lockfile
 
 Install scripts are allowed only for the native packages listed under `allowBuilds` in `pnpm-workspace.yaml` (`@parcel/watcher`, `better-sqlite3`, `esbuild`, `lmdb`, `msgpackr-extract`, `sqlite3`). The `@scarf/scarf` telemetry script is denied.
 
-## Build and Run
+## Build, Check, and Run
 
-Build the shared library first; the apps import its compiled `dist/` output:
+Run commands from the repository root. The root build uses pnpm's dependency-topological workspace order, so the shared library is compiled before its consumers:
 
-```sh
-pnpm --filter @abo/lib-primeui build
-```
+| Contract | Command |
+| --- | --- |
+| Build all packages | `pnpm build` |
+| Build library / Angular / React / Vue / backend | `pnpm run build:library` / `pnpm run build:angular` / `pnpm run build:react` / `pnpm run build:vue` / `pnpm run build:backend` |
+| Watch the library | `pnpm run watch:library` |
+| Run one app (library is built first for UI apps) | `pnpm run dev:angular` / `pnpm run dev:react` / `pnpm run dev:vue` / `pnpm run dev:backend` |
+| Run all four apps and watch the library | `pnpm dev` |
+| Run one package check | `pnpm run check:library`, `check:angular`, `check:react`, `check:vue`, or `check:backend` |
+| Run all package checks | `pnpm check` |
 
-Then build or start any app:
+Combined development builds the library before starting its watcher and the applications. pnpm owns the child processes so interruption and startup failures propagate without shell-specific background processes. Angular, React, and Vue bind to `127.0.0.1` on ports `4200`, `5173`, and `5174`; the backend uses port `3000`. React and Vue E2E use distinct strict ports, and Vue's CI preview remains on `4173`.
 
-| Package | Build | Run | Other scripts |
-| --- | --- | --- | --- |
-| Angular | `pnpm --filter ng-primeui build` | `pnpm --filter ng-primeui start` (http://localhost:4200/) | `test`, `e2e` |
-| React | `pnpm --filter react-primeui build` | `pnpm --filter react-primeui dev` | `lint`, `e2e`, `preview` |
-| Vue | `pnpm --filter vue-primeui build` | `pnpm --filter vue-primeui dev` | `test:unit`, `test:e2e`, `lint`, `preview` |
-| Backend | `pnpm --filter back-todo build` | `pnpm --filter back-todo start` (port 3000) | `test`, `test:e2e`, `lint` |
+Checks compose each package's existing build, tests, and non-mutating lint commands. Angular tests run with `--watch=false`; Vue tests run with `vitest run`; Vue's auto-fixing lint scripts are not used by workspace checks. Angular has no lint script, React has no unit-test script, and the library has no test or lint scripts. E2E tests remain package-local (`e2e`, `test:e2e`, or Angular's schematic-managed `ng e2e`). Install Playwright browsers before the first E2E run with `pnpm --filter <app> exec playwright install`.
 
-Equivalently, `cd` into a package and run `pnpm <script>`. Install Playwright browsers before the first E2E run with `pnpm --filter <app> exec playwright install`. The Vue `lint` scripts and backend `lint` script modify files.
+The package scripts remain available when running `pnpm <script>` from an individual package.
 
 Known failures inherited from `main`:
 
