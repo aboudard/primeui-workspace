@@ -114,3 +114,14 @@ The following checks were run before the workspace cutover on Windows with Node 
 For a reproducible frontend baseline, restore access to the exact locked tarballs and install Playwright browsers. Vue's unit script watches by default (`npx vitest run` is the one-shot equivalent); its lint scripts modify files, so use `npx oxlint .` and `npx eslint .` for non-fixing checks. Run browser suites sequentially: React and Vue use port 5173, Vue uses 4173 for its CI preview, and Angular uses 4200. Angular component-test configuration also uses 5173.
 
 Migration-sensitive configuration includes Angular's npm package-manager selection, schematic collections and Playwright builder in `angular.json`, plus npm-based VS Code tasks; React and Vue Playwright configurations start servers with `npm run`. The library's `prepublishOnly` runs `npm run build`; release-it requires a clean working tree, publishes to Verdaccio, and creates `v${version}` tags. Preserve these behaviors until their respective migration stages.
+All three example apps declare `@abo/lib-primeui` as an npm dependency. The library package sets its publish registry to `http://localhost:4873/`, so publishing or installing a newly released local version requires that Verdaccio registry to be running. For library development, build it from `lib-primeui/` with `npm run build`.
+
+## Registry npm et dépendances privées
+
+La librairie partagée s'appelle désormais **`@abo/lib-primeui`** (anciennement `lib-primeui`). Ordre de mise en route :
+
+1. Démarrer Verdaccio (`http://localhost:4873/`).
+2. Publier la librairie : `cd lib-primeui && npm install && npm publish`.
+3. Dans chaque application (`ng-primeui`, `react-primeui`, `vue-primeui`) : `npm install` pour régénérer le `package-lock.json`.
+
+Chaque application a un `.npmrc` qui envoie le scope `@abo` vers Verdaccio et tout le reste vers `https://registry.npmjs.org/`.

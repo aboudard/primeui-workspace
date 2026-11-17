@@ -7,7 +7,7 @@ import { RadioButtonGroup, type RadioButtonGroupValueChangeEvent } from "@primer
 import { RadioButton } from "@primereact/ui/radiobutton";
 import { InputText } from '@primereact/ui/inputtext';
 import { Label } from "@primereact/ui/label";
-import { type User as PrimeUser, DEFAULT_USER } from 'lib-primeui';
+import { type User as PrimeUser, DEFAULT_USER } from '@abo/lib-primeui';
 
 function App() {
   const [title, setTitle] = useState("react-primeui");

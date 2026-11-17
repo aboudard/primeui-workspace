@@ -7,7 +7,7 @@ import RadioButton from 'primevue/radiobutton';
 import Label from 'primevue/label';
 
 import { ref } from 'vue';
-import { type User as PrimeUser, DEFAULT_USER } from 'lib-primeui';
+import { type User as PrimeUser, DEFAULT_USER } from '@abo/lib-primeui';
 
 const title = ref('vue primeui');
 const user: PrimeUser = DEFAULT_USER;

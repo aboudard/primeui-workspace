@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.0](https://github.com/aboudard/primeui-workspace/compare/v1.1.2...v1.2.0) (2026-11-17)
+
+### Features
+
+* add DTOs for creating and updating todos, and update TodosController to use them ([e479804](https://github.com/aboudard/primeui-workspace/commit/e479804d8e5171375201cb4b1f24ff0285c1ece6))
+* initialize back-todo project with NestJS, TypeORM, and SQLite ([6595fa6](https://github.com/aboudard/primeui-workspace/commit/6595fa6290fc4ab2272d94fb2f36a738e1fbad72))
+* initialize vue-primeui project with Vite, PrimeVue, and TailwindCSS ([8bb9aca](https://github.com/aboudard/primeui-workspace/commit/8bb9acaa1b5c34cc08357c1cf817339fbbe4ecd1))
+* rename lib-primeui to @abo/lib-primeui and update dependencies across all projects ([a2f352e](https://github.com/aboudard/primeui-workspace/commit/a2f352eb2b927c2b249c22f1ebcc42933338cf6f))
+
 ## [1.1.2](https://github.com/aboudard/primeui-workspace/compare/v1.1.0...v1.1.2) (2026-09-30)
 
 ### Bug Fixes
