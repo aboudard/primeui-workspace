@@ -20,7 +20,7 @@
     "@primeicons/vue": "^8.0.2",
     "@primeuix/themes": "^3.0.1",
     "@tailwindcss/vite": "^4.3.3",
-    "@abo/lib-primeui": "^1.1.2",
+    "@abo/lib-primeui": "workspace:*",
     "pinia": "^4.0.3",
     "primevue": "^5.0.2",
     "tailwindcss": "^4.3.3",
