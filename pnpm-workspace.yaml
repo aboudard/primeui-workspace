@@ -1,4 +1,5 @@
 packages:
+  - back-todo
   - lib-primeui
   - ng-primeui
   - react-primeui
@@ -6,6 +7,9 @@ packages:
 
 allowBuilds:
   '@parcel/watcher': true
+  '@scarf/scarf': false
+  better-sqlite3: true
   esbuild: true
   lmdb: true
   msgpackr-extract: true
+  sqlite3: true
