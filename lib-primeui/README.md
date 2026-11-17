@@ -4,9 +4,7 @@ A small TypeScript library providing a `User` type and a default user value.
 
 ## Install
 
-```sh
-npm install @abo/lib-primeui
-```
+In this repository, install from the workspace root with `pnpm install --frozen-lockfile` and build with `pnpm --filter @abo/lib-primeui build`. The example apps link this package locally.
 
 ## Usage
 
@@ -40,7 +38,7 @@ const AppPreset = definePreset(Aura, PrimeUIPreset, {
 ## Build
 
 ```sh
-npm run build
+pnpm build
 ```
 
 ## Registry npm et dépendances privées
@@ -52,8 +50,7 @@ Elle est publiée uniquement sur le Verdaccio local (`publishConfig.registry` = 
 > Prérequis : Verdaccio doit tourner sur `http://localhost:4873/` et vous devez y être connecté (`npm login --registry http://localhost:4873/`).
 
 ```bash
-npm install
-npm run build
+pnpm build
 npm publish          # ou : npm run release
 ```
 
